@@ -1,9 +1,15 @@
+@import "src/styles/variables/colors.scss";
+@import "src/styles/variables/fonts.scss";
+
 .nav-bar{
   display: flex;
-  gap: 100rem;
-  background-color: black;
-  color: white;
-  width: 90%;
+  gap: 80rem;
+  background-color: $main-black;
+  color: $main-white;
+  width: 100%;
   height: 10rem;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.2rem;
 
 }
