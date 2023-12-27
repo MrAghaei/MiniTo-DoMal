@@ -1,14 +1,14 @@
-@import "src/styles/variables/colors.scss";
-@import "src/styles/variables/fonts.scss";
+@import "../styles/abstracts/colors";
+@import "../styles/abstracts/fonts";
 
 .nav-bar{
   display: flex;
-  gap: 80rem;
-  background-color: $main-black;
+  gap: 1.2rem;
+
   color: $main-white;
   width: 100%;
   height: 10rem;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   font-size: 2.2rem;
 
