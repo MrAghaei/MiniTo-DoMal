@@ -1,5 +1,4 @@
-import './componenets/NavBar.scss';
-import './main.scss';
+import './_main.scss';
 
 import NavBar from './componenets/NavBar.jsx';
 import Content from './componenets/Content.jsx';
