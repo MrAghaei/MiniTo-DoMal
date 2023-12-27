@@ -1,10 +1,8 @@
-@import "styles/abstracts/fonts";
+@use 'styles/abstracts' as *;
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
-
 }
 html{
   font-size: 62.5%;
@@ -12,6 +10,7 @@ html{
 }
 body{
   font-family: $font-rubik;
-  overflow: hidden
-
+  overflow: hidden;
+  //max-width: 1440px;
+  background-color: $main-black;
 }
