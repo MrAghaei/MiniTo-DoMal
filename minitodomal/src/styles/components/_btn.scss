@@ -1,0 +1,23 @@
+@use 'src/styles/abstracts/colors' as *;
+.btn-main{
+  padding: 10px;
+  background-color: $primary-color;
+  color: $main-white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  &:hover {
+    background-color: #2980b9;
+  }
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.5); /* Adjust the color as needed */
+  }
+  &:active {
+    transform: translateY(1px); /* Add a subtle press effect */
+  }
+}
+
+
+
