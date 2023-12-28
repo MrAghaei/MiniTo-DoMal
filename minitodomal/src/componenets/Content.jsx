@@ -1,13 +1,36 @@
 import './Content.scss';
+import { useState } from 'react';
+
 function Content() {
+  const [taskInput, setTaskInput] = useState('');
+  const [tasks, setTasks] = useState([]);
+
+  const handleInputChange = (event) => {
+    setTaskInput(event.target.value);
+  };
+  const handleAddTask = () => {
+    if (taskInput !== '') {
+      setTasks([...tasks, taskInput]);
+      setTaskInput('');
+    }
+  };
   return (
     <div className={'content'}>
-      <button>Add task</button>
+      <div>
+        <input
+          type={'text'}
+          value={taskInput}
+          onChange={handleInputChange}
+          placeholder={'enter task name'}
+        />
+        <button onClick={handleAddTask}>Add task</button>
+      </div>
+
       <div>
         <ul>
-          <li>task 1</li>
-          <li>task 2</li>
-          <li>task 3</li>
+          {tasks.map((task, index) => (
+            <li key={index}>{task}</li>
+          ))}
         </ul>
       </div>
     </div>
