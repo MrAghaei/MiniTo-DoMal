@@ -1,5 +1,7 @@
 import './Content.scss';
 import { useState } from 'react';
+import AddTask from './AddTask.jsx';
+import TaskList from './TaskList.jsx';
 
 function Content() {
   const [taskInput, setTaskInput] = useState('');
@@ -16,23 +18,13 @@ function Content() {
   };
   return (
     <div className={'content'}>
-      <div>
-        <input
-          type={'text'}
-          value={taskInput}
-          onChange={handleInputChange}
-          placeholder={'enter task name'}
-        />
-        <button onClick={handleAddTask}>Add task</button>
-      </div>
+      <AddTask
+        handleAddTask={handleAddTask}
+        handleInputChange={handleInputChange}
+        taskInput={taskInput}
+      />
 
-      <div>
-        <ul>
-          {tasks.map((task, index) => (
-            <li key={index}>{task}</li>
-          ))}
-        </ul>
-      </div>
+      <TaskList tasks={tasks} />
     </div>
   );
 }
