@@ -4,12 +4,12 @@
 .nav-bar{
   display: flex;
   gap: 1.2rem;
-
+  max-width: 100vw;
   color: $main-white;
   width: 100%;
   height: 10rem;
   justify-content: space-between;
   align-items: center;
   font-size: 2.2rem;
-
+  padding: 5rem;
 }
