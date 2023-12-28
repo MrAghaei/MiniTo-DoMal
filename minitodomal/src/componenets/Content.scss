@@ -2,6 +2,6 @@
 .content{
   background-color: $main-black;
   height: 100rem;
-  width: 100%;
+  max-width: 100vw;
   color: $main-white;
 }
