@@ -16,6 +16,11 @@ function Content() {
       setTaskInput('');
     }
   };
+  const handleDeleteTask = (index) => {
+    const updatedTasks = [...tasks]; //to avoid directly modifying the original array
+    updatedTasks.splice(index, 1);
+    setTasks(updatedTasks);
+  };
   return (
     <div className={'content'}>
       <AddTask
@@ -24,7 +29,7 @@ function Content() {
         taskInput={taskInput}
       />
 
-      <TaskList tasks={tasks} />
+      <TaskList tasks={tasks} handleDeleteTask={handleDeleteTask} />
     </div>
   );
 }
