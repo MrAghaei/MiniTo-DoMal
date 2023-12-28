@@ -1,13 +1,20 @@
+import '/src/styles/components/_btn.scss';
+import '/src/styles/components/_input.scss';
+import './AddTask.scss';
+
 function AddTask({ taskInput, handleInputChange, handleAddTask }) {
   return (
-    <div>
+    <div className={'add-task'}>
       <input
+        className={'input-main'}
         type={'text'}
         value={taskInput}
         onChange={handleInputChange}
         placeholder={'enter task name'}
       />
-      <button onClick={handleAddTask}>Add task</button>
+      <button className={'btn-main'} onClick={handleAddTask}>
+        Add Task
+      </button>
     </div>
   );
 }

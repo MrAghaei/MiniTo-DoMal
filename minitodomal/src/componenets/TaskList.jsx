@@ -2,9 +2,9 @@ import './TaskList.scss';
 function TaskList({ tasks, handleDeleteTask }) {
   return (
     <div>
-      <ul>
+      <ul className={'task-list'}>
         {tasks.map((task, index) => (
-          <li key={index}>
+          <li className={'items'} key={index}>
             <div className={'delete'} onClick={() => handleDeleteTask(index)}>
               <svg
                 xmlns='http://www.w3.org/2000/svg'

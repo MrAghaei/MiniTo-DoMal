@@ -1,0 +1,17 @@
+@use 'src/styles/abstracts/colors' as *;
+.input-main {
+  width: 93%;
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid $primary-color;
+  background-color: $main-white;
+  border-radius: 5px;
+  box-sizing: border-box; /* Ensure padding is included in the width */
+  transition: border-color 0.3s ease;
+  &:focus {
+    outline: none;
+    border-color: #3498db; /* Adjust the color as needed */
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.3); /* Add a subtle focus effect */
+  }
+}
+

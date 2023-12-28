@@ -1,6 +1,23 @@
+@use 'src/styles/abstracts/colors' as *;
 .delete{
   width: 2rem;
   height: 2rem;
   display: inline-block;
 
+}
+.task-list{
+  list-style: none;
+  font-size: 1.8rem;
+
+}
+.items{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+  padding: 8px;
+  margin: 8px 0;
+  border: 1px solid $primary-color;
+  border-radius: 4px;
 }
