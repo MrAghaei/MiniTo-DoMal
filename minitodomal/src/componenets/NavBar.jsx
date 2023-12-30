@@ -1,12 +1,12 @@
 import TaskCounter from './TaskCounter.jsx';
 import './NavBar.scss';
 
-function NavBar({ tasks }) {
+function NavBar({ pendingTasksCounter }) {
   return (
     <div className={'nav-bar'}>
       <div className={'flex'}>
         <p>Hello user</p>
-        <TaskCounter tasks={tasks} />
+        <TaskCounter counter={pendingTasksCounter} />
       </div>
       <img className={'logo'} src={'../../public/checklist.png'} />
       <div>MiniTo-DoMal</div>

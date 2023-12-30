@@ -1,6 +1,6 @@
 import './TaskCounter.scss';
-function TaskCounter({ tasks }) {
-  return <div className={'task-counter'}>{tasks.length} task pending</div>;
+function TaskCounter({ counter }) {
+  return <div className={'task-counter'}>{counter} task pending</div>;
 }
 
 export default TaskCounter;
