@@ -8,6 +8,7 @@ function NavBar({ tasks }) {
         <p>Hello user</p>
         <TaskCounter tasks={tasks} />
       </div>
+      <img className={'logo'} src={'../../public/checklist.png'} />
       <div>MiniTo-DoMal</div>
     </div>
   );
