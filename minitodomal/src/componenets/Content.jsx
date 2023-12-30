@@ -10,10 +10,17 @@ function Content({ tasks, setTasks }) {
     setTaskInput(event.target.value);
   };
   const handleAddTask = () => {
-    if (taskInput !== '') {
-      setTasks([...tasks, taskInput]);
-      setTaskInput('');
-    }
+    // if (taskInput !== '') {
+    //   setTasks([...tasks, taskInput]);
+    //   setTaskInput('');
+    // }
+    const newTask = {
+      id: tasks.length + 1,
+      text: taskInput,
+      done: false,
+    };
+    setTasks((prevTasks) => [...prevTasks, newTask]);
+    setTaskInput('');
   };
   const handleDeleteTask = (index) => {
     const updatedTasks = [...tasks]; //to avoid directly modifying the original array
@@ -28,7 +35,7 @@ function Content({ tasks, setTasks }) {
         taskInput={taskInput}
       />
 
-      <TaskList tasks={tasks} handleDeleteTask={handleDeleteTask} />
+      <TaskList tasks={tasks} setTasks={setTasks} handleDeleteTask={handleDeleteTask} />
     </div>
   );
 }

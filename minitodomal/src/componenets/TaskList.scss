@@ -1,5 +1,5 @@
 @use 'src/styles/abstracts/colors' as *;
-.delete{
+.icon{
   width: 2rem;
   height: 2rem;
   display: inline-block;
@@ -20,4 +20,10 @@
   margin: 8px 0;
   border: 1px solid $primary-color;
   border-radius: 4px;
+}
+.done{
+  text-decoration: line-through;
+}
+.checkbox{
+  accent-color: $primary-color;
 }
