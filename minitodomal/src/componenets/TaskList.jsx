@@ -2,23 +2,7 @@ import './TaskList.scss';
 import '/src/styles/components/_checkbox.scss';
 import '/src/styles/components/_icon.scss';
 
-function TaskList({ tasks, setTasks }) {
-  function findTaskIndexById(tasks, id) {
-    return tasks.findIndex((task) => task.id === id);
-  }
-
-  function handleDoneTask(id) {
-    const updatedTasks = [...tasks];
-    const index = findTaskIndexById(updatedTasks, id);
-    updatedTasks[index] = { ...updatedTasks[index], done: !updatedTasks[index].done };
-    setTasks(updatedTasks);
-  }
-  const handleDeleteTask = (id) => {
-    const updatedTasks = [...tasks]; //to avoid directly modifying the original array
-    const index = findTaskIndexById(updatedTasks, id);
-    updatedTasks.splice(index, 1);
-    setTasks(updatedTasks);
-  };
+function TaskList({ tasks, setTasks, handleDeleteTask, handleDoneTask }) {
   return (
     <div>
       <ul className={'task-list'}>

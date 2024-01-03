@@ -2,16 +2,7 @@ import '/src/styles/components/_btn.scss';
 import '/src/styles/components/_input.scss';
 import './AddTask.scss';
 
-function AddTask({ taskInput, handleChangeInput, tasks, setTaskInput, setTasks }) {
-  const handleAddTask = () => {
-    const newTask = {
-      id: tasks.length + 1,
-      text: taskInput,
-      done: false,
-    };
-    setTasks((prevTasks) => [...prevTasks, newTask]);
-    setTaskInput('');
-  };
+function AddTask({ taskInput, handleChangeInput, tasks, setTaskInput, setTasks, handleAddTask }) {
   return (
     <div className={'add-task'}>
       <input
