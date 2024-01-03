@@ -1,11 +1,6 @@
 @use 'src/styles/abstracts/colors' as *;
 
-.icon {
-  width: 2rem;
-  height: 2rem;
-  display: inline-block;
-  cursor: pointer;
-}
+
 .delete{
   width: 2rem;
   height: 2rem;
@@ -32,9 +27,4 @@
 }
 .done{
   text-decoration: line-through;
-}
-.checkbox{
-  accent-color: $primary-color;
-
-
 }
