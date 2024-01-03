@@ -6,14 +6,12 @@ import TaskList from './TaskList.jsx';
 function Content({ tasks, setTasks }) {
   const [taskInput, setTaskInput] = useState('');
 
+
   const handleInputChange = (event) => {
     setTaskInput(event.target.value);
   };
   const handleAddTask = () => {
-    // if (taskInput !== '') {
-    //   setTasks([...tasks, taskInput]);
-    //   setTaskInput('');
-    // }
+
     const newTask = {
       id: tasks.length + 1,
       text: taskInput,
@@ -21,6 +19,7 @@ function Content({ tasks, setTasks }) {
     };
     setTasks((prevTasks) => [...prevTasks, newTask]);
     setTaskInput('');
+
   };
   const handleDeleteTask = (index) => {
     const updatedTasks = [...tasks]; //to avoid directly modifying the original array
@@ -35,7 +34,9 @@ function Content({ tasks, setTasks }) {
         taskInput={taskInput}
       />
 
+
       <TaskList tasks={tasks} setTasks={setTasks} handleDeleteTask={handleDeleteTask} />
+
     </div>
   );
 }
