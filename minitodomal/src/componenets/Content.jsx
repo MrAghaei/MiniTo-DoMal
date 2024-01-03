@@ -3,18 +3,23 @@ import { useState } from 'react';
 import AddTask from './AddTask.jsx';
 import TaskList from './TaskList.jsx';
 
-function Content() {
+function Content({ tasks, setTasks }) {
   const [taskInput, setTaskInput] = useState('');
-  const [tasks, setTasks] = useState([]);
+
 
   const handleInputChange = (event) => {
     setTaskInput(event.target.value);
   };
   const handleAddTask = () => {
-    if (taskInput !== '') {
-      setTasks([...tasks, taskInput]);
-      setTaskInput('');
-    }
+
+    const newTask = {
+      id: tasks.length + 1,
+      text: taskInput,
+      done: false,
+    };
+    setTasks((prevTasks) => [...prevTasks, newTask]);
+    setTaskInput('');
+
   };
   const handleDeleteTask = (index) => {
     const updatedTasks = [...tasks]; //to avoid directly modifying the original array
@@ -29,7 +34,9 @@ function Content() {
         taskInput={taskInput}
       />
 
-      <TaskList tasks={tasks} handleDeleteTask={handleDeleteTask} />
+
+      <TaskList tasks={tasks} setTasks={setTasks} handleDeleteTask={handleDeleteTask} />
+
     </div>
   );
 }
