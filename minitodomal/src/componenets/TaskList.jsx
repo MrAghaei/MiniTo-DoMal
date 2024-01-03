@@ -1,4 +1,6 @@
 import './TaskList.scss';
+import '/src/styles/components/_checkbox.scss';
+import '/src/styles/components/_icon.scss';
 
 function TaskList({ tasks, setTasks, handleDeleteTask }) {
   function handleTaskDone(id) {
