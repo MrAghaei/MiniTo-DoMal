@@ -6,37 +6,28 @@ import TaskList from './TaskList.jsx';
 function Content({ tasks, setTasks }) {
   const [taskInput, setTaskInput] = useState('');
 
-
-  const handleInputChange = (event) => {
+  const handleChangeInput = (event) => {
     setTaskInput(event.target.value);
   };
-  const handleAddTask = () => {
 
-    const newTask = {
-      id: tasks.length + 1,
-      text: taskInput,
-      done: false,
-    };
-    setTasks((prevTasks) => [...prevTasks, newTask]);
-    setTaskInput('');
-
-  };
-  const handleDeleteTask = (index) => {
+  const handleDeleteTask = (id) => {
     const updatedTasks = [...tasks]; //to avoid directly modifying the original array
+    const index = updatedTasks.findIndex((task) => task.id === id);
     updatedTasks.splice(index, 1);
     setTasks(updatedTasks);
   };
   return (
     <div className={'content'}>
       <AddTask
-        handleAddTask={handleAddTask}
-        handleInputChange={handleInputChange}
+        tasks={tasks}
+        setTasks={setTasks}
+        taskInput={taskInput}
+        setTaskInput={setTaskInput}
+        handleChangeInput={handleChangeInput}
         taskInput={taskInput}
       />
 
-
       <TaskList tasks={tasks} setTasks={setTasks} handleDeleteTask={handleDeleteTask} />
-
     </div>
   );
 }
