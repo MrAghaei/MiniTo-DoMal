@@ -7,7 +7,7 @@ function TaskList({ tasks, setTasks }) {
     return tasks.findIndex((task) => task.id === id);
   }
 
-  function handleTaskDone(id) {
+  function handleDoneTask(id) {
     const updatedTasks = [...tasks];
     const index = findTaskIndexById(updatedTasks, id);
     updatedTasks[index] = { ...updatedTasks[index], done: !updatedTasks[index].done };
@@ -33,7 +33,7 @@ function TaskList({ tasks, setTasks }) {
                 type={'checkbox'}
                 id={'taskdone'}
                 name={'checkbox'}
-                onChange={() => handleTaskDone(task.id)}
+                onChange={() => handleDoneTask(task.id)}
               />
             </div>
             {task.text}
