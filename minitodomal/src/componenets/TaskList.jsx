@@ -2,13 +2,13 @@ import './TaskList.scss';
 import '/src/styles/components/_checkbox.scss';
 import '/src/styles/components/_icon.scss';
 
-function TaskList({ tasks, setTasks, handleDeleteTask, handleDoneTask }) {
+function TaskList({ tasks, deleteTaskEvent, doneTaskEvent }) {
   return (
     <div>
       <ul className={'task-list'}>
         {tasks.map((task, index) => (
           <li className={`items ${task.done ? 'done' : ''}`} key={task.id}>
-            <div className={'icon'} onClick={() => handleDeleteTask(task.id)}>
+            <div className={'icon'} onClick={() => deleteTaskEvent(task.id)}>
               <img src={'/src/assets/deleteicon.svg'} alt={'deleteicon'} />
             </div>
             <div className={'icon'}>
@@ -17,7 +17,7 @@ function TaskList({ tasks, setTasks, handleDeleteTask, handleDoneTask }) {
                 type={'checkbox'}
                 id={'taskdone'}
                 name={'checkbox'}
-                onChange={() => handleDoneTask(task.id)}
+                onChange={() => doneTaskEvent(task.id)}
               />
             </div>
             {task.text}

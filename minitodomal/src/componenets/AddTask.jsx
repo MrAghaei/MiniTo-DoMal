@@ -1,8 +1,18 @@
 import '/src/styles/components/_btn.scss';
 import '/src/styles/components/_input.scss';
 import './AddTask.scss';
+import { useState } from 'react';
 
-function AddTask({ taskInput, handleChangeInput, tasks, setTaskInput, setTasks, handleAddTask }) {
+function AddTask({ addTaskEvent }) {
+  const [taskInput, setTaskInput] = useState('');
+
+  const handleChangeInput = (event) => {
+    setTaskInput(event.target.value);
+  };
+  const handleAddTask = () => {
+    addTaskEvent(taskInput);
+    setTaskInput('');
+  };
   return (
     <div className={'add-task'}>
       <input
