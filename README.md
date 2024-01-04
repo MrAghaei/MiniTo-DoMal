@@ -12,10 +12,6 @@
 ---
 ### How to Install and Run
 #### Step 1 - Install package
-```
-npm install
-```
+```npm install```
 #### Step 2 - Run in Local
-```
-npm run dev
-```
+```npm run dev```
