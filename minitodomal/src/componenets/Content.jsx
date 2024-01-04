@@ -1,5 +1,4 @@
 import './Content.scss';
-import { useEffect, useState } from 'react';
 import AddTask from './AddTask.jsx';
 import TaskList from './TaskList.jsx';
 

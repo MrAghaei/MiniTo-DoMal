@@ -3,19 +3,12 @@ import './_main.scss';
 import NavBar from './componenets/NavBar.jsx';
 import Content from './componenets/Content.jsx';
 import { useEffect, useState } from 'react';
-import { localStorageKey } from './models/local-storage-key.js';
+import { getTaskData, setTasksData } from './services/task.service.js';
 function App() {
-  const [tasks, setTasks] = useState(() => {
-    const localData = localStorage.getItem(localStorageKey);
-    return localData ? JSON.parse(localData) : [];
-  });
+  const [tasks, setTasks] = useState(() => getTaskData());
 
   let pendingTasksCounter = tasks.filter((task) => task.done === false).length;
-  useEffect(() => {
-    localStorage.setItem(localStorageKey, JSON.stringify(tasks));
-    console.log('tasks saved');
-    console.log(tasks);
-  }, [tasks]);
+  useEffect(() => setTasksData(tasks), [tasks]);
 
   return (
     <>
