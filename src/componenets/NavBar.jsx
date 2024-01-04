@@ -8,7 +8,7 @@ function NavBar({ pendingTasksCounter }) {
         <p>Hello user</p>
         <TaskCounter counter={pendingTasksCounter} />
       </div>
-      <img className={'logo'} src={'../../public/checklist.png'} />
+      <img className={'logo'} src={'/checklist.png'} />
       <div>MiniTo-DoMal</div>
     </div>
   );

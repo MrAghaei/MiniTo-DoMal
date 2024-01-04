@@ -9,7 +9,7 @@ function TaskList({ tasks, deleteTaskEvent, doneTaskEvent }) {
         {tasks.map((task, index) => (
           <li className={`items ${task.done ? 'done' : ''}`} key={task.id}>
             <div className={'icon'} onClick={() => deleteTaskEvent(task.id)}>
-              <img src={'/src/assets/deleteicon.svg'} alt={'deleteicon'} />
+              <img src={'deleteicon.svg'} alt={'deleteicon'} />
             </div>
             <div className={'icon'}>
               <input
