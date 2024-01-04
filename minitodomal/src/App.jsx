@@ -2,10 +2,14 @@ import './_main.scss';
 
 import NavBar from './componenets/NavBar.jsx';
 import Content from './componenets/Content.jsx';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { getTaskData, setTasksData } from './services/task.service.js';
 function App() {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(() => getTaskData());
+
   let pendingTasksCounter = tasks.filter((task) => task.done === false).length;
+  useEffect(() => setTasksData(tasks), [tasks]);
+
   return (
     <>
       <NavBar pendingTasksCounter={pendingTasksCounter} />

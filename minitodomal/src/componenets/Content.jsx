@@ -1,5 +1,4 @@
 import './Content.scss';
-import { useState } from 'react';
 import AddTask from './AddTask.jsx';
 import TaskList from './TaskList.jsx';
 
@@ -28,6 +27,7 @@ function Content({ tasks, setTasks }) {
     };
     setTasks((prevTasks) => [...prevTasks, newTask]);
   };
+
   return (
     <div className={'content'}>
       <AddTask addTaskEvent={handleAddTask} />
