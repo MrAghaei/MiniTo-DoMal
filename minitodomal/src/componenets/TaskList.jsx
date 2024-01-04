@@ -18,6 +18,7 @@ function TaskList({ tasks, deleteTaskEvent, doneTaskEvent }) {
                 id={'taskdone'}
                 name={'checkbox'}
                 onChange={() => doneTaskEvent(task.id)}
+                checked={task.done}
               />
             </div>
             {task.text}
